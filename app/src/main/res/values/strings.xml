@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name" translatable="false">ViewBinding</string>
+    <string name="manzana">manzana</string>
+    <string name="pera">pera</string>
+    <string name="limon">limon</string>
+    <string name="melocoton">melocoton</string>
+    <string name="main_boton_aceptar">Aceptar</string>
+    <string name="cardTitle">El gato</string>
+    <string name="cardSubTitle">Esto es un texto de prueba aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
+    <string name="welcomeUser">Bienvenido Sr %1s, %2s</string>
+
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">listasDesplegables</string>
+    <string name="limon">llimona</string>
+    <string name="manzana">poma</string>
+    <string name="melocoton">pressec</string>
+    <string name="pera">pera</string>
+    <string name="main_boton_aceptar">Aceptar</string>
+    <string name="cardTitle">El gato</string>
+    <string name="cardSubTitle">Esto es un texto de prueba aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
+    <string name="welcomeUser">Bienvenido Sr %1s, %2s</string>
+</resources>

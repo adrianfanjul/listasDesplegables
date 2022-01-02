@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.tokioschol.listasdesplegables.domain.User" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DataBindingExample">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="@{@string/welcomeUser(user.name,user.lastName)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Aqui el nombre" />
+
+        <include
+            android:id="@+id/card"
+            binding:title="@{user.name}"
+            binding:subTitle="@{user.lastName}"
+            layout="@layout/card"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
