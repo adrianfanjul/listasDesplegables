@@ -10,24 +10,29 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
+import com.tokioschol.listasdesplegables.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Spinner spinner;
-    private MaterialButton botonAceptar;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bindViews();
+        binding=ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         listeners();
+        Glide.with(this)
+                .load("https://aprendelibvrefiles.blob.core.windows.net/aprendelibvre-container/course/creacion_de_sitios_web/image/imgscursoweb-01_xl.png")
+                .into(binding.cardActivity.cardviewCardImg);
     }
 
     private void listeners() {
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            binding.mainActivitySpinnerDeclarativo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @SuppressLint("LongLogTag")
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
@@ -36,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     frutaSeleccionada=(String) adapterView.getItemAtPosition(position);
                 }
                 Log.i("Selected item getItemAt :", frutaSeleccionada);
-                String item=spinner.getSelectedItem().toString();
+                String item=binding.mainActivitySpinnerDeclarativo.getSelectedItem().toString();
                 Log.i("Selected item :", item);
             }
 
@@ -46,14 +51,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //ESCOGER SEGUN QUE QUIERAS PROBAR
-        botonAceptar.setOnClickListener(view -> startActivity(new Intent(MainActivity.this,DataBindingExample.class)));
+        binding.mainAceptarBtn.setOnClickListener(view -> startActivity(new Intent(MainActivity.this,DataBindingExample.class)));
         //botonAceptar.setOnClickListener(view -> startActivity(new Intent(MainActivity.this,CardViewActivity.class)));
 
     }
 
-    private void bindViews() {
-        spinner=findViewById(R.id.mainActivity_spinner_declarativo);
-        botonAceptar=findViewById(R.id.main_aceptar_btn);
-    }
 
 }
